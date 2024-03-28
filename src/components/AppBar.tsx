@@ -46,13 +46,13 @@ export const AppBar: FC = (props) => {
 
         {/* Wallet & Settings */}
         <div className="navbar-end">
-          <Link href="/">
+          <Link href="/" className="mr-4">
             Token Creator
           </Link>
           <Link href="/update" className="mr-4">
             Update Metadata
           </Link>
-          <Link href="/uploader" className="mr-8">
+          <Link href="/uploader" className="mr-4">
             Upload Metadata
           </Link>
           <Link href="/metadata" className="mr-4">

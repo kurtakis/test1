@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "next dev -p 80 --experimental-https",
+    "dev": "next dev --experimental-https",
     "build": "next build",
     "start": "next start -p 80 & local-ssl-proxy --key solanamillions.com-key.pem --cert solanamillions.com.pem --source 443 --target 80local",
     "lint": "next lint",
