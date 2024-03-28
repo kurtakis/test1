@@ -16,7 +16,10 @@ module.exports = {
       https: require.resolve('https-browserify'),
       crypto: require.resolve('crypto-browserify'),
       querystring: require.resolve('querystring-es3'),
-      zlib: require.resolve('browserify-zlib')
+      zlib: require.resolve('browserify-zlib'),
+      tls: false,
+      net: false,
+      child_process: false
     }
     return config;
   },
