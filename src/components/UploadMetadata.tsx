@@ -8,8 +8,8 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { notify } from '../utils/notifications';
 
 const bundlers = [
-  { id: 1, network: 'mainnet-beta', name: 'https://node1.bundlr.network' },
-  { id: 2, network: 'devnet', name: 'https://devnet.bundlr.network'},
+  { id: 1, network: 'mainnet-beta', name: 'https://node1.irys.xyz' },
+  { id: 2, network: 'devnet', name: 'https://devnet.irys.xyz'},
 ]
 
 const classNames = (...classes) => {
@@ -122,7 +122,7 @@ export const UploadMetadata: FC = ({}) => {
   };
 
   const uploadImage = async () => {
-    const price = await bundlr.utils.getPrice('solana', imageFile);
+    const price = await bundlr.utils.getPrice('solana', imageFile.length);
     let amount = bundlr.utils.unitConverter(price);
     amount = amount.toNumber();
 
