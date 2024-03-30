@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev --experimental-https",
     "build": "next build",
-    "start": "next start -p 80 & local-ssl-proxy --key solanamillions.com-key.pem --cert solanamillions.com.pem --source 443 --target 80local",
+    "start": "next start -p 80 & local-ssl-proxy --key private.key --cert certificate.crt --source 443 --target 80",
     "lint": "next lint",
     "test": "jest"
   },
