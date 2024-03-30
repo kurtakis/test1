@@ -35,7 +35,7 @@ export const HomeView: FC = ({ }) => {
       <div className="md:hero-content flex flex-col">
         <h1 className="text-center text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#9945FF] to-[#14F195]">
           Token Creator
-        </h1>      
+        </h1>
         <div className="text-center">
           <RequestAirdrop  my-2/>
           {wallet && <p>SOL Balance: {(balance || 0).toLocaleString()}</p>}
