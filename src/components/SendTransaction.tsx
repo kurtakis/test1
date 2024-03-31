@@ -33,7 +33,7 @@ export const SendTransaction: FC = () => {
             console.log('error', `Transaction failed! ${error?.message}`, signature);
             return;
         }
-    }, [publicKey, notify, connection, sendTransaction]);
+    }, [publicKey, connection, sendTransaction]);
 
     return (
         <div>
@@ -44,8 +44,8 @@ export const SendTransaction: FC = () => {
                 <div className="hidden group-disabled:block ">
                     Wallet not connected
                 </div>
-                <span className="block group-disabled:hidden" > 
-                    Send Transaction 
+                <span className="block group-disabled:hidden" >
+                    Send Transaction
                 </span>
             </button>
         </div>

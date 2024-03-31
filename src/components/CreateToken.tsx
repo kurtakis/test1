@@ -59,10 +59,10 @@ export const CreateToken: FC = () => {
             programId: TOKEN_PROGRAM_ID,
         }),
         createInitializeMintInstruction(
-          mintKeypair.publicKey, 
-          form.decimals, 
-          publicKey, 
-          publicKey, 
+          mintKeypair.publicKey,
+          form.decimals,
+          publicKey,
+          publicKey,
           TOKEN_PROGRAM_ID),
         createAssociatedTokenAccountInstruction(
           publicKey,
@@ -113,7 +113,7 @@ export const CreateToken: FC = () => {
         placeholder="Decimals"
         onChange={(e) => setDecimals(e.target.value)}
       />
-      
+
       <button
         className="px-8 m-2 btn animate-pulse bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:from-pink-500 hover:to-yellow-500 ..."
         onClick={() => onClick({decimals: Number(decimals), amount: Number(amount), metadata: metadata, symbol: symbol, tokenName: tokenName})}>
