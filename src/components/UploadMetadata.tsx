@@ -8,7 +8,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { notify } from '../utils/notifications';
 
 const bundlers = [
-  { id: 1, network: 'Mainnet-1', name: 'https://node1.irys.xyz' },
+  { id: 1, network: 'mainnet-beta', name: 'https://node1.irys.xyz' },
   { id: 2, network: 'devnet', name: 'https://devnet.irys.xyz'},
 ]
 
@@ -49,12 +49,12 @@ export const UploadMetadata: FC = ({}) => {
   const initializeBundlr = async () => {
     // initialise a bundlr client
     let bundler;
-    if (selected.name === 'https://devnet.irys.xyz') {
+    if (selected.name === 'https://devnet.bundlr.network') {
       bundler = new WebBundlr(
         `${selected.name}`,
         'solana',
         provider,
-        { providerUrl: 'https://node1.irys.xyz' }
+        { providerUrl: 'https://api.devnet.solana.com' }
       );
     } else {
        bundler = new WebBundlr(
