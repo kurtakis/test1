@@ -1,4 +1,4 @@
-import { WalletAdapterNetwork, WalletError } from '@solana/wallet-adapter-base';
+import {  WalletError } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider as ReactUIWalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import {
@@ -6,19 +6,15 @@ import {
     // LedgerWalletAdapter,
     // SlopeWalletAdapter,
 } from '@solana/wallet-adapter-wallets';
-import { Connection, clusterApiUrl } from '@solana/web3.js';
+import { Connection } from '@solana/web3.js';
 import { FC, ReactNode, useCallback, useMemo } from 'react';
 import { AutoConnectProvider, useAutoConnect } from './AutoConnectProvider';
 import { notify } from "../utils/notifications";
 
-const web3 = require('@solana/web3.js')
-
 const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const node_url = "http://solana-mainnet.core.chainstack.com/173ea881bf68267cb1f0ea9419fcd200";
     const connection = new Connection("https://solana-mainnet.core.chainstack.com/173ea881bf68267cb1f0ea9419fcd200", "confirmed");
     const { autoConnect } = useAutoConnect();
-    //const network = WalletAdapterNetwork.Mainnet;
-    const endpoint = useMemo(() => clusterApiUrl(connection), "confirmed");
+    const endpoint = useMemo(() => connection.rpcEndpoint, [connection]);
 
     const wallets = useMemo(
         () => [
@@ -26,8 +22,7 @@ const WalletContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
             // new LedgerWalletAdapter(),
             // new SlopeWalletAdapter(),
         ],
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [network]
+        []
     );
 
     const onError = useCallback(
