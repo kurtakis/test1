@@ -8,7 +8,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { notify } from '../utils/notifications';
 
 const bundlers = [
-  { id: 1, network: 'mainnet-beta', name: 'https://node1.irys.xyz' },
+  { id: 1, network: 'mainnet-beta', name: 'https://solana-mainnet.core.chainstack.com/173ea881bf68267cb1f0ea9419fcd200' },
   { id: 2, network: 'devnet', name: 'https://devnet.irys.xyz'},
 ]
 
@@ -56,11 +56,12 @@ export const UploadMetadata: FC = ({}) => {
         provider,
         { providerUrl: 'https://api.devnet.solana.com' }
       );
-    } else {
+    } else if (selected.name === 'https://solana-mainnet.core.chainstack.com/173ea881bf68267cb1f0ea9419fcd200'){
        bundler = new WebBundlr(
         `${selected.name}`,
         'solana',
-        provider
+        provider,
+        { providerUrl: 'https://solana-mainnet.core.chainstack.com/173ea881bf68267cb1f0ea9419fcd200'}
       );
     }
 

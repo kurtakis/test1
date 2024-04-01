@@ -14,10 +14,12 @@ export function getExplorerUrl(
         )}`
       } else if (endpoint === 'https://api.devnet.solana.com') {
         cluster = 'devnet'
+      } else if (endpoint === 'https://elastic-booth:postal-dodgy-hurdle-nape-tweak-kettle@solana-mainnet.core.chainstack.com') {
+        cluster = 'custom'
       }
-  
+
       return cluster ? `?cluster=${cluster}` : ''
     }
-  
+
     return `https://explorer.solana.com/${itemType}/${viewTypeOrItemAddress}${getClusterUrlParam()}`
   }

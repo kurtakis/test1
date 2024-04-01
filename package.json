@@ -34,6 +34,7 @@
     "daisyui": "^1.24.3",
     "fs-extra": "^10.0.1",
     "google-auth-library": "^9.7.0",
+    "http-proxy": "^1.18.1",
     "https-browserify": "^1.0.0",
     "immer": "^9.0.12",
     "local-ssl-proxy": "^2.0.5",
